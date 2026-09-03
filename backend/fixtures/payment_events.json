@@ -1,0 +1,406 @@
+[
+  {
+    "id": "evt_card_repeat_001",
+    "entity": "event",
+    "account_id": "acc_DZDo5wxvsWorPv",
+    "event": "payment.failed",
+    "contains": ["payment"],
+    "payload": {
+      "payment": {
+        "entity": {
+          "id": "pay_Nf3xR7QzKq1abc",
+          "entity": "payment",
+          "amount": 249900,
+          "currency": "INR",
+          "status": "failed",
+          "order_id": "order_Nf3wZ2Lm9Kd1xy",
+          "invoice_id": null,
+          "method": "card",
+          "amount_refunded": 0,
+          "captured": false,
+          "card_id": "card_Nf3xR9QzYp2def",
+          "card": {
+            "network": "Visa",
+            "type": "credit",
+            "issuer": "HDFC",
+            "last4": "4242"
+          },
+          "bank": null,
+          "wallet": null,
+          "vpa": null,
+          "email": "aditi.rao@example.com",
+          "contact": "+919876500011",
+          "error_code": "BAD_REQUEST_ERROR",
+          "error_description": "Your card was declined by the issuing bank. Please contact your bank or use a different payment method.",
+          "error_source": "bank",
+          "error_step": "payment_authorization",
+          "error_reason": "issuer_declined",
+          "created_at": 1767254400
+        }
+      },
+      "order": {
+        "entity": {
+          "id": "order_Nf3wZ2Lm9Kd1xy",
+          "amount": 249900,
+          "currency": "INR",
+          "receipt": "rcpt_10231",
+          "status": "attempted"
+        }
+      }
+    },
+    "created_at": 1767254401,
+    "meta": { "customer_name": "Aditi Rao", "attempt_number": 1, "product": "Wireless Earbuds Pro" }
+  },
+  {
+    "id": "evt_card_repeat_002",
+    "entity": "event",
+    "account_id": "acc_DZDo5wxvsWorPv",
+    "event": "payment.failed",
+    "contains": ["payment"],
+    "payload": {
+      "payment": {
+        "entity": {
+          "id": "pay_Nf3xR7QzKq2ghi",
+          "entity": "payment",
+          "amount": 249900,
+          "currency": "INR",
+          "status": "failed",
+          "order_id": "order_Nf3wZ2Lm9Kd1xy",
+          "invoice_id": null,
+          "method": "card",
+          "amount_refunded": 0,
+          "captured": false,
+          "card_id": "card_Nf3xR9QzYp2def",
+          "card": {
+            "network": "Visa",
+            "type": "credit",
+            "issuer": "HDFC",
+            "last4": "4242"
+          },
+          "bank": null,
+          "wallet": null,
+          "vpa": null,
+          "email": "aditi.rao@example.com",
+          "contact": "+919876500011",
+          "error_code": "BAD_REQUEST_ERROR",
+          "error_description": "Your card was declined by the issuing bank. Please contact your bank or use a different payment method.",
+          "error_source": "bank",
+          "error_step": "payment_authorization",
+          "error_reason": "issuer_declined",
+          "created_at": 1767254700
+        }
+      },
+      "order": {
+        "entity": {
+          "id": "order_Nf3wZ2Lm9Kd1xy",
+          "amount": 249900,
+          "currency": "INR",
+          "receipt": "rcpt_10231",
+          "status": "attempted"
+        }
+      }
+    },
+    "created_at": 1767254701,
+    "meta": { "customer_name": "Aditi Rao", "attempt_number": 2, "product": "Wireless Earbuds Pro" }
+  },
+  {
+    "id": "evt_insufficient_funds_001",
+    "entity": "event",
+    "account_id": "acc_DZDo5wxvsWorPv",
+    "event": "payment.failed",
+    "contains": ["payment"],
+    "payload": {
+      "payment": {
+        "entity": {
+          "id": "pay_Nf4mQ8LpXr3jkl",
+          "entity": "payment",
+          "amount": 89900,
+          "currency": "INR",
+          "status": "failed",
+          "order_id": "order_Nf4lY1Kn8Jc2wx",
+          "invoice_id": null,
+          "method": "card",
+          "amount_refunded": 0,
+          "captured": false,
+          "card_id": "card_Nf4mQ0LpZs4mno",
+          "card": {
+            "network": "RuPay",
+            "type": "debit",
+            "issuer": "SBIN",
+            "last4": "8811"
+          },
+          "bank": "SBIN",
+          "wallet": null,
+          "vpa": null,
+          "email": "rohit.sharma@example.com",
+          "contact": "+919876500022",
+          "error_code": "BAD_REQUEST_ERROR",
+          "error_description": "Payment failed because the customer's account has insufficient funds.",
+          "error_source": "bank",
+          "error_step": "payment_authorization",
+          "error_reason": "insufficient_funds",
+          "created_at": 1767258000
+        }
+      },
+      "order": {
+        "entity": {
+          "id": "order_Nf4lY1Kn8Jc2wx",
+          "amount": 89900,
+          "currency": "INR",
+          "receipt": "rcpt_10245",
+          "status": "attempted"
+        }
+      }
+    },
+    "created_at": 1767258001,
+    "meta": { "customer_name": "Rohit Sharma", "attempt_number": 1, "product": "Running Shoes" }
+  },
+  {
+    "id": "evt_otp_timeout_001",
+    "entity": "event",
+    "account_id": "acc_DZDo5wxvsWorPv",
+    "event": "payment.failed",
+    "contains": ["payment"],
+    "payload": {
+      "payment": {
+        "entity": {
+          "id": "pay_Nf5pT2NqYv5pqr",
+          "entity": "payment",
+          "amount": 149900,
+          "currency": "INR",
+          "status": "failed",
+          "order_id": "order_Nf5oX3Mm7Hb3zt",
+          "invoice_id": null,
+          "method": "card",
+          "amount_refunded": 0,
+          "captured": false,
+          "card_id": "card_Nf5pT4NqAw6stu",
+          "card": {
+            "network": "Mastercard",
+            "type": "credit",
+            "issuer": "ICIC",
+            "last4": "5566"
+          },
+          "bank": null,
+          "wallet": null,
+          "vpa": null,
+          "email": "priya.menon@example.com",
+          "contact": "+919876500033",
+          "error_code": "GATEWAY_ERROR",
+          "error_description": "Payment failed as customer did not complete the OTP authentication in time.",
+          "error_source": "customer",
+          "error_step": "payment_authentication",
+          "error_reason": "otp_timeout",
+          "created_at": 1767261600
+        }
+      },
+      "order": {
+        "entity": {
+          "id": "order_Nf5oX3Mm7Hb3zt",
+          "amount": 149900,
+          "currency": "INR",
+          "receipt": "rcpt_10259",
+          "status": "attempted"
+        }
+      }
+    },
+    "created_at": 1767261601,
+    "meta": { "customer_name": "Priya Menon", "attempt_number": 1, "product": "Smart Watch" }
+  },
+  {
+    "id": "evt_otp_invalid_001",
+    "entity": "event",
+    "account_id": "acc_DZDo5wxvsWorPv",
+    "event": "payment.failed",
+    "contains": ["payment"],
+    "payload": {
+      "payment": {
+        "entity": {
+          "id": "pay_Nf6rV5PsBw7vwx",
+          "entity": "payment",
+          "amount": 59900,
+          "currency": "INR",
+          "status": "failed",
+          "order_id": "order_Nf6qZ6Nn9Jd4ab",
+          "invoice_id": null,
+          "method": "card",
+          "amount_refunded": 0,
+          "captured": false,
+          "card_id": "card_Nf6rV7PsCx8yzc",
+          "card": {
+            "network": "Visa",
+            "type": "debit",
+            "issuer": "AXIS",
+            "last4": "1122"
+          },
+          "bank": null,
+          "wallet": null,
+          "vpa": null,
+          "email": "karan.verma@example.com",
+          "contact": "+919876500044",
+          "error_code": "GATEWAY_ERROR",
+          "error_description": "The OTP entered by the customer was incorrect after repeated attempts.",
+          "error_source": "customer",
+          "error_step": "payment_authentication",
+          "error_reason": "otp_retries_exceeded",
+          "created_at": 1767265200
+        }
+      },
+      "order": {
+        "entity": {
+          "id": "order_Nf6qZ6Nn9Jd4ab",
+          "amount": 59900,
+          "currency": "INR",
+          "receipt": "rcpt_10267",
+          "status": "attempted"
+        }
+      }
+    },
+    "created_at": 1767265201,
+    "meta": { "customer_name": "Karan Verma", "attempt_number": 1, "product": "Bluetooth Speaker" }
+  },
+  {
+    "id": "evt_network_error_001",
+    "entity": "event",
+    "account_id": "acc_DZDo5wxvsWorPv",
+    "event": "payment.failed",
+    "contains": ["payment"],
+    "payload": {
+      "payment": {
+        "entity": {
+          "id": "pay_Nf7tX8RuDy9cde",
+          "entity": "payment",
+          "amount": 319900,
+          "currency": "INR",
+          "status": "failed",
+          "order_id": "order_Nf7sB9Pp1Ke5fg",
+          "invoice_id": null,
+          "method": "upi",
+          "amount_refunded": 0,
+          "captured": false,
+          "card_id": null,
+          "card": null,
+          "bank": null,
+          "wallet": null,
+          "vpa": "priya.menon@okhdfcbank",
+          "email": "neha.gupta@example.com",
+          "contact": "+919876500055",
+          "error_code": "GATEWAY_ERROR",
+          "error_description": "Payment failed because the gateway timed out while communicating with the bank.",
+          "error_source": "gateway",
+          "error_step": "payment_authorization",
+          "error_reason": "gateway_timed_out",
+          "created_at": 1767268800
+        }
+      },
+      "order": {
+        "entity": {
+          "id": "order_Nf7sB9Pp1Ke5fg",
+          "amount": 319900,
+          "currency": "INR",
+          "receipt": "rcpt_10278",
+          "status": "attempted"
+        }
+      }
+    },
+    "created_at": 1767268801,
+    "meta": { "customer_name": "Neha Gupta", "attempt_number": 1, "product": "Air Purifier" }
+  },
+  {
+    "id": "evt_server_error_001",
+    "entity": "event",
+    "account_id": "acc_DZDo5wxvsWorPv",
+    "event": "payment.failed",
+    "contains": ["payment"],
+    "payload": {
+      "payment": {
+        "entity": {
+          "id": "pay_Nf8vZ1SwFa1hij",
+          "entity": "payment",
+          "amount": 179900,
+          "currency": "INR",
+          "status": "failed",
+          "order_id": "order_Nf8uD2Qq3Lf6kl",
+          "invoice_id": null,
+          "method": "netbanking",
+          "amount_refunded": 0,
+          "captured": false,
+          "card_id": null,
+          "card": null,
+          "bank": "UTIB",
+          "wallet": null,
+          "vpa": null,
+          "email": "sameer.khan@example.com",
+          "contact": "+919876500066",
+          "error_code": "SERVER_ERROR",
+          "error_description": "Payment failed due to a network issue between the bank and Razorpay.",
+          "error_source": "network",
+          "error_step": "payment_authorization",
+          "error_reason": "network_issue",
+          "created_at": 1767272400
+        }
+      },
+      "order": {
+        "entity": {
+          "id": "order_Nf8uD2Qq3Lf6kl",
+          "amount": 179900,
+          "currency": "INR",
+          "receipt": "rcpt_10289",
+          "status": "attempted"
+        }
+      }
+    },
+    "created_at": 1767272401,
+    "meta": { "customer_name": "Sameer Khan", "attempt_number": 1, "product": "Coffee Maker" }
+  },
+  {
+    "id": "evt_abandoned_001",
+    "entity": "event",
+    "account_id": "acc_DZDo5wxvsWorPv",
+    "event": "order.abandoned",
+    "contains": ["order"],
+    "payload": {
+      "order": {
+        "entity": {
+          "id": "order_Nf9wF3Rr5Mg7mn",
+          "entity": "order",
+          "amount": 129900,
+          "currency": "INR",
+          "receipt": "rcpt_10301",
+          "status": "created",
+          "attempts": 0,
+          "email": "divya.iyer@example.com",
+          "contact": "+919876500077",
+          "created_at": 1767276000
+        }
+      }
+    },
+    "created_at": 1767276000,
+    "meta": { "customer_name": "Divya Iyer", "attempt_number": 0, "product": "Yoga Mat + Blocks Set" }
+  },
+  {
+    "id": "evt_abandoned_002",
+    "entity": "event",
+    "account_id": "acc_DZDo5wxvsWorPv",
+    "event": "order.abandoned",
+    "contains": ["order"],
+    "payload": {
+      "order": {
+        "entity": {
+          "id": "order_Nf9xG4Ss6Nh8op",
+          "entity": "order",
+          "amount": 449900,
+          "currency": "INR",
+          "receipt": "rcpt_10312",
+          "status": "created",
+          "attempts": 0,
+          "email": "arjun.nair@example.com",
+          "contact": "+919876500088",
+          "created_at": 1767279600
+        }
+      }
+    },
+    "created_at": 1767279600,
+    "meta": { "customer_name": "Arjun Nair", "attempt_number": 0, "product": "Mechanical Keyboard" }
+  }
+]
