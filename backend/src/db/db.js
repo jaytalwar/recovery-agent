@@ -29,6 +29,7 @@ db.exec(`
     payment_link_id TEXT,
     payment_link_url TEXT,
     payment_link_mock INTEGER NOT NULL DEFAULT 0,
+    link_expiry_minutes INTEGER,
     message TEXT,
     message_reasoning TEXT,
     message_mock INTEGER NOT NULL DEFAULT 0,

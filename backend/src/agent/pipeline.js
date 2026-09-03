@@ -95,6 +95,7 @@ export async function processEvent(event) {
     paymentLinkId: paymentLink.id,
     paymentLinkUrl: paymentLink.short_url,
     paymentLinkMock: paymentLink.mock,
+    linkExpiryMinutes: decision.linkExpiryMinutes,
     message: generated.message,
     messageReasoning: generated.reasoning,
     messageMock: generated.mock,

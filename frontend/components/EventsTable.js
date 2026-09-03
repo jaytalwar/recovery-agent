@@ -1,6 +1,7 @@
 "use client";
 
 import { Fragment } from "react";
+import RetryFlow from "./RetryFlow";
 
 const CATEGORY_STYLES = {
   CARD_ISSUE: "bg-rose-100 text-rose-700",
@@ -111,6 +112,11 @@ export default function EventsTable({ attempts, expandedId, onToggleExpand, onSe
                             ))}
                           </ul>
                         </div>
+                        {a.category === "OTP_TIMEOUT" && a.action === "INSTANT_RETRY_LINK" && (
+                          <div className="md:col-span-2" onClick={(e) => e.stopPropagation()}>
+                            <RetryFlow attempt={a} onSetOutcome={onSetOutcome} />
+                          </div>
+                        )}
                         <div className="md:col-span-2">
                           <div className="text-xs font-semibold uppercase text-slate-500">
                             Recovery message {a.messageMock ? "(template — no ANTHROPIC_API_KEY set)" : "(Claude)"}
