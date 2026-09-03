@@ -112,7 +112,8 @@ export default function EventsTable({ attempts, expandedId, onToggleExpand, onSe
                             ))}
                           </ul>
                         </div>
-                        {a.category === "OTP_TIMEOUT" && a.action === "INSTANT_RETRY_LINK" && (
+                        {(a.category === "OTP_TIMEOUT" || a.category === "NETWORK_ISSUE") &&
+                          a.action === "INSTANT_RETRY_LINK" && (
                           <div className="md:col-span-2" onClick={(e) => e.stopPropagation()}>
                             <RetryFlow attempt={a} onSetOutcome={onSetOutcome} />
                           </div>
