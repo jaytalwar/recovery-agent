@@ -1,13 +1,19 @@
 "use client";
 
 // Step-by-step retry timeline shown for attempts recovered via a fresh
-// Payment Link (OTP timeout or a transient network/gateway error). Tracks
-// the link's expiry window so a stale, un-retried link can be flagged
-// separately from a genuine "customer tried and it failed" outcome.
+// Payment Link — OTP timeout or a transient network/gateway error, both of
+// which use the INSTANT_RETRY_LINK action. Tracks the link's expiry window
+// so a stale, un-retried link can be flagged separately from a genuine
+// "customer tried and it failed" outcome.
 
 const CATEGORY_LABEL = {
   OTP_TIMEOUT: "OTP authentication timed out before the customer could confirm",
   NETWORK_ISSUE: "Gateway/network error interrupted the payment",
+};
+
+const FLOW_TITLE = {
+  OTP_TIMEOUT: "OTP timeout retry flow",
+  NETWORK_ISSUE: "Network issue retry flow",
 };
 
 function minutesBetween(a, b) {
@@ -43,7 +49,9 @@ export default function RetryFlow({ attempt, onSetOutcome }) {
 
   return (
     <div className="rounded-lg bg-white p-3 ring-1 ring-slate-200">
-      <div className="mb-2 text-xs font-semibold uppercase text-slate-500">OTP timeout retry flow</div>
+      <div className="mb-2 text-xs font-semibold uppercase text-slate-500">
+        {FLOW_TITLE[attempt.category] ?? "Retry flow"}
+      </div>
       <ol className="space-y-2.5">
         <Step
           tone="done"
