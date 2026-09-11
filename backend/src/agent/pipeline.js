@@ -4,7 +4,6 @@
 // "Sending" is mocked via console.log by default, per the hackathon scope —
 // swapping in a real WhatsApp/email API only requires replacing sendMessage().
 
-import { randomUUID } from "node:crypto";
 import { classifyEvent } from "./classifier.js";
 import { decideRecoveryAction } from "./decisionEngine.js";
 import { createRecoveryPaymentLink } from "../api/razorpay.js";
@@ -63,10 +62,7 @@ export async function processEvent(event) {
     contact: context.contact,
     description: `Complete your order: ${context.product}`,
     expiryMinutes: decision.linkExpiryMinutes ?? 60,
-    // Razorpay requires reference_id to be globally unique on the account, forever —
-    // event.id alone would collide on every re-run against a fresh local DB (the
-    // fixtures are static), so a short unique suffix is appended per attempt.
-    referenceId: `${event.id}_${randomUUID().slice(0, 8)}`,
+    referenceId: event.id,
   });
 
   const generated = await generateRecoveryMessage({
@@ -103,7 +99,6 @@ export async function processEvent(event) {
     message: generated.message,
     messageReasoning: generated.reasoning,
     messageMock: generated.mock,
-    messageProvider: generated.provider,
     status: "sent",
   });
 

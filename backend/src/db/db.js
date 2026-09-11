@@ -33,7 +33,6 @@ db.exec(`
     message TEXT,
     message_reasoning TEXT,
     message_mock INTEGER NOT NULL DEFAULT 0,
-    message_provider TEXT NOT NULL DEFAULT 'template',
     status TEXT NOT NULL DEFAULT 'sent',
     created_at TEXT NOT NULL DEFAULT (strftime('%Y-%m-%dT%H:%M:%fZ','now')),
     resolved_at TEXT

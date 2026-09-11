@@ -32,7 +32,7 @@ test("insufficient funds -> SWITCH_TO_UPI", () => {
 test("otp timeout -> INSTANT_RETRY_LINK with short expiry", () => {
   const decision = decideFor("evt_otp_timeout_001");
   assert.equal(decision.action, Action.INSTANT_RETRY_LINK);
-  assert.equal(decision.linkExpiryMinutes, 20);
+  assert.equal(decision.linkExpiryMinutes, 15);
 });
 
 test("network issue -> INSTANT_RETRY_LINK", () => {

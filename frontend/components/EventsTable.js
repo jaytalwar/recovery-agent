@@ -12,12 +12,6 @@ const CATEGORY_STYLES = {
   UNKNOWN: "bg-slate-200 text-slate-700",
 };
 
-const PROVIDER_LABEL = {
-  claude: "(Claude)",
-  groq: "(Groq — Claude fallback)",
-  template: "(template — no LLM key set)",
-};
-
 const STATUS_STYLES = {
   sent: "bg-slate-100 text-slate-600",
   recovered: "bg-emerald-100 text-emerald-700",
@@ -126,13 +120,13 @@ export default function EventsTable({ attempts, expandedId, onToggleExpand, onSe
                         )}
                         <div className="md:col-span-2">
                           <div className="text-xs font-semibold uppercase text-slate-500">
-                            Recovery message {PROVIDER_LABEL[a.message_provider] ?? "(template)"}
+                            Recovery message {a.messageMock ? "(template — no ANTHROPIC_API_KEY set)" : "(Claude)"}
                           </div>
                           <p className="mt-1 rounded-lg bg-white p-3 text-sm text-slate-700 ring-1 ring-slate-200">
                             {a.message}
                           </p>
                           {a.message_reasoning && (
-                            <p className="mt-1 text-xs italic text-slate-500">Reasoning: {a.message_reasoning}</p>
+                            <p className="mt-1 text-xs italic text-slate-500">Claude's reasoning: {a.message_reasoning}</p>
                           )}
                         </div>
                         <div className="md:col-span-2 text-xs text-slate-500">
@@ -146,9 +140,7 @@ export default function EventsTable({ attempts, expandedId, onToggleExpand, onSe
                           >
                             {a.payment_link_url}
                           </a>{" "}
-                          {a.paymentLinkMock && (
-                            <span className="text-slate-400">(mock — no Razorpay test keys set, or Razorpay call failed)</span>
-                          )}
+                          {a.paymentLinkMock && <span className="text-slate-400">(mock — no Razorpay test keys set)</span>}
                         </div>
                       </div>
                     </td>
