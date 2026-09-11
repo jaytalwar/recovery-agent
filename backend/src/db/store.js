@@ -6,12 +6,12 @@ const insertStmt = db.prepare(`
     id, event_id, event_type, customer_name, email, contact, product,
     amount, currency, category, classification_reasoning, action,
     decision_reasoning, discount_percent, payment_link_id, payment_link_url,
-    payment_link_mock, link_expiry_minutes, message, message_reasoning, message_mock, status
+    payment_link_mock, link_expiry_minutes, message, message_reasoning, message_mock, message_provider, status
   ) VALUES (
     @id, @event_id, @event_type, @customer_name, @email, @contact, @product,
     @amount, @currency, @category, @classification_reasoning, @action,
     @decision_reasoning, @discount_percent, @payment_link_id, @payment_link_url,
-    @payment_link_mock, @link_expiry_minutes, @message, @message_reasoning, @message_mock, @status
+    @payment_link_mock, @link_expiry_minutes, @message, @message_reasoning, @message_mock, @message_provider, @status
   )
 `);
 
@@ -39,6 +39,7 @@ export function saveRecoveryAttempt(record) {
     message: record.message ?? null,
     message_reasoning: record.messageReasoning ?? null,
     message_mock: record.messageMock ? 1 : 0,
+    message_provider: record.messageProvider ?? "template",
     status: record.status ?? "sent",
   });
   return id;

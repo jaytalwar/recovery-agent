@@ -45,7 +45,7 @@ did, not just that it did something.
 
 3. **Create the Payment Link** ([`backend/src/api/razorpay.js`](backend/src/api/razorpay.js)) —
    a real Razorpay **test-mode** Payment Link is created via the Razorpay
-   Node SDK, sized and expiry-tuned to the chosen action (e.g. a 15-minute
+   Node SDK, sized and expiry-tuned to the chosen action (e.g. a 20-minute
    expiry for an OTP-timeout retry vs. 24 hours for an abandoned-cart
    reminder).
 

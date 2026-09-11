@@ -58,7 +58,7 @@ export function decideRecoveryAction(event, classification) {
         action: Action.INSTANT_RETRY_LINK,
         reasoning,
         discountPercent: null,
-        linkExpiryMinutes: 15,
+        linkExpiryMinutes: 20,
       };
     }
 
